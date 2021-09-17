@@ -15,22 +15,20 @@ const Form = () => {
   const login = (e) => {
     e.preventDefault();
 
-    fetch("https://fitnesstrac-kr.herokuapp.com/api/activities'", {
+    fetch("http://fitnesstrac-kr.herokuapp.com/api/users/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        user: {
-          username: user,
-          password: pass,
-        },
+        username: user,
+        password: pass,
       }),
     })
       .then((response) => response.json())
       .then((result) => {
-        console.log(result.data.token);
-        window.localStorage.setItem("token", result.data.token);
+        console.log(result.token);
+        window.localStorage.setItem("token", result.token);
       })
       .catch(console.error);
   };
@@ -51,7 +49,7 @@ const Form = () => {
 
         <input
           placeholder="*password"
-          type="text"
+          type="password"
           value={pass}
           onChange={(e) => {
             e.preventDefault();
