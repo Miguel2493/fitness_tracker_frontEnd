@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Form = () => {
   const [user, setUser] = useState("");
@@ -54,8 +55,9 @@ const Form = () => {
             setPass(e.target.value);
           }}
         ></input>
-
-        <button type="submit">Submit</button>
+        <Link to="/home">
+          <button type="submit">Submit</button>
+        </Link>
       </form>
     </div>
   );

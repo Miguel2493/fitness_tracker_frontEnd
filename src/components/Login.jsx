@@ -56,8 +56,9 @@ const Form = () => {
             setPass(e.target.value);
           }}
         ></input>
-
-        <button type="submit">Submit</button>
+        <Link to="/home">
+          <button type="submit">Submit</button>
+        </Link>
       </form>
 
       <Link to="/register">Don't have an account? Register here!</Link>
